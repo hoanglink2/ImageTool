@@ -1,0 +1,11 @@
+F:\PRIVATE\MMO\Tools\Temp\TestTabControl\TestTabControl\bin\Debug\TestTabControl.exe.config
+F:\PRIVATE\MMO\Tools\Temp\TestTabControl\TestTabControl\bin\Debug\TestTabControl.exe
+F:\PRIVATE\MMO\Tools\Temp\TestTabControl\TestTabControl\bin\Debug\TestTabControl.pdb
+F:\PRIVATE\MMO\Tools\Temp\TestTabControl\TestTabControl\obj\Debug\TestTabControl.csprojResolveAssemblyReference.cache
+F:\PRIVATE\MMO\Tools\Temp\TestTabControl\TestTabControl\obj\Debug\TestTabControl.Form1.resources
+F:\PRIVATE\MMO\Tools\Temp\TestTabControl\TestTabControl\obj\Debug\TestTabControl.Properties.Resources.resources
+F:\PRIVATE\MMO\Tools\Temp\TestTabControl\TestTabControl\obj\Debug\TestTabControl.csproj.GenerateResource.Cache
+F:\PRIVATE\MMO\Tools\Temp\TestTabControl\TestTabControl\obj\Debug\TestTabControl.exe
+F:\PRIVATE\MMO\Tools\Temp\TestTabControl\TestTabControl\obj\Debug\TestTabControl.pdb
+F:\PRIVATE\MMO\Tools\Temp\TestTabControl\TestTabControl\bin\Debug\Newtonsoft.Json.dll
+F:\PRIVATE\MMO\Tools\Temp\TestTabControl\TestTabControl\bin\Debug\Newtonsoft.Json.xml
