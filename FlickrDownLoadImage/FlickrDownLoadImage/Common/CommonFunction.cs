@@ -40,6 +40,49 @@ namespace FlickrDownLoadImage.Common
             }
             return sDataReturn;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <returns></returns>
+        public static string getSingleLargeImage(string url)
+        {
+            string sReturn = "false";
+            string PageSource = RequestMethod(url);
+            string shutterstockOrgFolder = Properties.Settings.Default.shutterstockFolder;
+            string shutterstockLargeFolder = Properties.Settings.Default.shutterstockLargeFolder;
+                string LargeImgURL = getOriginalImaage(PageSource, "", 3);
+                if (!LargeImgURL.Equals(""))
+                {
+                    List<ImageDTO> arrImageList = new List<ImageDTO>();
+                    ImageDTO _ImageDTO = new ImageDTO();
+                    _ImageDTO.sArtistName = "hoang dinh thanh";
+                    _ImageDTO.sArtistUserName = "hoang dinh thanh";
+                    _ImageDTO.sDescription = "";
+                    _ImageDTO.sTitle = "";
+                    _ImageDTO.sUrl = url;
+                    _ImageDTO.sFolderName = "LargeImage";
+                    //_ImageDTO.
+                    arrImageList.Add(_ImageDTO);
+                    long nIndex = DatabaseController.saveLargeImageInfo(arrImageList);
+                    sReturn = DownloadImage(LargeImgURL, shutterstockLargeFolder, nIndex + ".jpg");
+                    if (sReturn == "0")
+                    {
+                        sReturn = "Success";
+                    }
+                    else
+                    {
+                        sReturn = "fail";
+                    }
+                }
+                return sReturn;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="isDlOrg"></param>
+        /// <returns></returns>
         public static string getSingleOriginalImage(string url)
         {
             string sReturn = "Fail";
@@ -49,6 +92,7 @@ namespace FlickrDownLoadImage.Common
             string shutterstockLargeFolder = Properties.Settings.Default.shutterstockLargeFolder;
             try
             {
+
                 if (!OrgImgURL.Equals(""))
                 {
                     //string pattern = @"//";

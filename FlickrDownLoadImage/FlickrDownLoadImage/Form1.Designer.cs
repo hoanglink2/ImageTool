@@ -38,19 +38,21 @@
             this.dtP_TimeFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtURL1 = new System.Windows.Forms.TextBox();
-            this.btnDownload_Single = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtImageID = new System.Windows.Forms.TextBox();
-            this.txtShutterStockID = new System.Windows.Forms.TextBox();
-            this.txtShutterStock_tag = new System.Windows.Forms.TextBox();
-            this.btnAsync = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnDownload_Single = new System.Windows.Forms.Button();
+            this.txtURL1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnAsync = new System.Windows.Forms.Button();
+            this.txtShutterStock_tag = new System.Windows.Forms.TextBox();
+            this.txtShutterStockID = new System.Windows.Forms.TextBox();
+            this.txtImageID = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.chx_DlOrg = new System.Windows.Forms.CheckBox();
+            this.btn_Download_L = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -149,6 +151,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btn_Download_L);
+            this.tabPage2.Controls.Add(this.chx_DlOrg);
             this.tabPage2.Controls.Add(this.txtStatus);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.btnDownload_Single);
@@ -162,14 +166,31 @@
             this.tabPage2.Text = "Download Single";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // txtStatus
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "URL";
+            this.txtStatus.Location = new System.Drawing.Point(88, 60);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(100, 20);
+            this.txtStatus.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(29, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "status";
+            // 
+            // btnDownload_Single
+            // 
+            this.btnDownload_Single.Location = new System.Drawing.Point(683, 12);
+            this.btnDownload_Single.Name = "btnDownload_Single";
+            this.btnDownload_Single.Size = new System.Drawing.Size(75, 23);
+            this.btnDownload_Single.TabIndex = 2;
+            this.btnDownload_Single.Text = "DownLoad";
+            this.btnDownload_Single.UseVisualStyleBackColor = true;
+            this.btnDownload_Single.Click += new System.EventHandler(this.btnDownload_Single_Click);
             // 
             // txtURL1
             // 
@@ -178,15 +199,14 @@
             this.txtURL1.Size = new System.Drawing.Size(573, 20);
             this.txtURL1.TabIndex = 1;
             // 
-            // btnDownload_Single
+            // label3
             // 
-            this.btnDownload_Single.Location = new System.Drawing.Point(683, 12);
-            this.btnDownload_Single.Name = "btnDownload_Single";
-            this.btnDownload_Single.Size = new System.Drawing.Size(75, 23);
-            this.btnDownload_Single.TabIndex = 2;
-            this.btnDownload_Single.Text = "button1";
-            this.btnDownload_Single.UseVisualStyleBackColor = true;
-            this.btnDownload_Single.Click += new System.EventHandler(this.btnDownload_Single_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(26, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "URL";
             // 
             // tabPage3
             // 
@@ -205,23 +225,35 @@
             this.tabPage3.Text = "async shutterstock";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // btnAsync
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "ImageID";
+            this.btnAsync.Location = new System.Drawing.Point(139, 147);
+            this.btnAsync.Name = "btnAsync";
+            this.btnAsync.Size = new System.Drawing.Size(75, 23);
+            this.btnAsync.TabIndex = 6;
+            this.btnAsync.Text = "Sync";
+            this.btnAsync.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // txtShutterStock_tag
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "ShutterStockID";
+            this.txtShutterStock_tag.Location = new System.Drawing.Point(139, 98);
+            this.txtShutterStock_tag.Name = "txtShutterStock_tag";
+            this.txtShutterStock_tag.Size = new System.Drawing.Size(547, 20);
+            this.txtShutterStock_tag.TabIndex = 5;
+            // 
+            // txtShutterStockID
+            // 
+            this.txtShutterStockID.Location = new System.Drawing.Point(139, 57);
+            this.txtShutterStockID.Name = "txtShutterStockID";
+            this.txtShutterStockID.Size = new System.Drawing.Size(170, 20);
+            this.txtShutterStockID.TabIndex = 4;
+            // 
+            // txtImageID
+            // 
+            this.txtImageID.Location = new System.Drawing.Point(139, 21);
+            this.txtImageID.Name = "txtImageID";
+            this.txtImageID.Size = new System.Drawing.Size(100, 20);
+            this.txtImageID.TabIndex = 3;
             // 
             // label6
             // 
@@ -232,51 +264,43 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Tag";
             // 
-            // txtImageID
+            // label5
             // 
-            this.txtImageID.Location = new System.Drawing.Point(139, 21);
-            this.txtImageID.Name = "txtImageID";
-            this.txtImageID.Size = new System.Drawing.Size(100, 20);
-            this.txtImageID.TabIndex = 3;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(34, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "ShutterStockID";
             // 
-            // txtShutterStockID
+            // label4
             // 
-            this.txtShutterStockID.Location = new System.Drawing.Point(139, 57);
-            this.txtShutterStockID.Name = "txtShutterStockID";
-            this.txtShutterStockID.Size = new System.Drawing.Size(170, 20);
-            this.txtShutterStockID.TabIndex = 4;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(34, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "ImageID";
             // 
-            // txtShutterStock_tag
+            // chx_DlOrg
             // 
-            this.txtShutterStock_tag.Location = new System.Drawing.Point(139, 98);
-            this.txtShutterStock_tag.Name = "txtShutterStock_tag";
-            this.txtShutterStock_tag.Size = new System.Drawing.Size(547, 20);
-            this.txtShutterStock_tag.TabIndex = 5;
+            this.chx_DlOrg.AutoSize = true;
+            this.chx_DlOrg.Location = new System.Drawing.Point(231, 62);
+            this.chx_DlOrg.Name = "chx_DlOrg";
+            this.chx_DlOrg.Size = new System.Drawing.Size(122, 17);
+            this.chx_DlOrg.TabIndex = 5;
+            this.chx_DlOrg.Text = "DownLoad Original?";
+            this.chx_DlOrg.UseVisualStyleBackColor = true;
             // 
-            // btnAsync
+            // btn_Download_L
             // 
-            this.btnAsync.Location = new System.Drawing.Point(139, 147);
-            this.btnAsync.Name = "btnAsync";
-            this.btnAsync.Size = new System.Drawing.Size(75, 23);
-            this.btnAsync.TabIndex = 6;
-            this.btnAsync.Text = "Sync";
-            this.btnAsync.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "status";
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(88, 60);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(100, 20);
-            this.txtStatus.TabIndex = 4;
+            this.btn_Download_L.Location = new System.Drawing.Point(683, 58);
+            this.btn_Download_L.Name = "btn_Download_L";
+            this.btn_Download_L.Size = new System.Drawing.Size(75, 23);
+            this.btn_Download_L.TabIndex = 6;
+            this.btn_Download_L.Text = "Download L";
+            this.btn_Download_L.UseVisualStyleBackColor = true;
+            this.btn_Download_L.Click += new System.EventHandler(this.btn_Download_L_Click);
             // 
             // Form1
             // 
@@ -323,6 +347,8 @@
         private System.Windows.Forms.Button btnAsync;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.CheckBox chx_DlOrg;
+        private System.Windows.Forms.Button btn_Download_L;
     }
 }
 

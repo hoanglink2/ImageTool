@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlickrDownLoadImage", "TestTabControl\FlickrDownLoadImage.csproj", "{FCF63154-44FB-4894-8CF7-39AD1F1A8CF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlickrDownLoadImage", "FlickrDownLoadImage\FlickrDownLoadImage.csproj", "{FCF63154-44FB-4894-8CF7-39AD1F1A8CF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

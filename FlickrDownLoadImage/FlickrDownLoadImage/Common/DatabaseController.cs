@@ -65,6 +65,50 @@ namespace FlickrDownLoadImage.Common
             }
             return sMessage;
         }
+        public static long saveLargeImageInfo(List<ImageDTO> ImageList)
+        {
+            string sMessage = "";
+            long nIndex = 0;
+            try
+            {
+                var connection = new MySqlConnection(FlickrImageConnection);
+                //Open connection
+                connection.Open();
+                var sqlCommand = "";
+                sqlCommand = "INSERT INTO largeimage VALUES(NULL,@title,@artist_Name,@artist_UserName,@width,@height,@url,@description,@folderName,@tag); SELECT last_insert_id();";
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = sqlCommand;
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@title", "title");
+                cmd.Parameters.AddWithValue("@artist_Name", "artist_Name");
+                cmd.Parameters.AddWithValue("@artist_UserName", "artist_UserName");
+                cmd.Parameters.AddWithValue("@width", 300);
+                cmd.Parameters.AddWithValue("@height", 300);
+                cmd.Parameters.AddWithValue("@url", "url");
+                cmd.Parameters.AddWithValue("@description", "description");
+                cmd.Parameters.AddWithValue("@folderName", "folderName");
+                cmd.Parameters.AddWithValue("@tag", "");
+                for (int i = 0; i < ImageList.Count; i++)
+                {
+                    cmd.Parameters["@title"].Value = ImageList[i].sTitle;
+                    cmd.Parameters["@artist_Name"].Value = ImageList[i].sArtistName == null ? "" : ImageList[i].sArtistName;
+                    cmd.Parameters["@artist_UserName"].Value = ImageList[i].sArtistUserName == null ? "" : ImageList[i].sArtistUserName;
+                    cmd.Parameters["@width"].Value = ImageList[i].nWidth;
+                    cmd.Parameters["@height"].Value = ImageList[i].nHeight;
+                    cmd.Parameters["@url"].Value = ImageList[i].sUrl == null ? "" : ImageList[i].sUrl;
+                    cmd.Parameters["@description"].Value = ImageList[i].sDescription == null ? "" : ImageList[i].sDescription;
+                    cmd.Parameters["@folderName"].Value = ImageList[i].sFolderName;
+                    cmd.Parameters["@tag"].Value = "";
+                    nIndex = Convert.ToInt64(cmd.ExecuteScalar());
+                }
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                nIndex = 0;
+            }
+            return nIndex;
+        }
 
         public static long saveShutterImageInfo(List<ImageDTO> ImageList)
         {

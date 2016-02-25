@@ -91,5 +91,12 @@ namespace FlickrDownLoadImage
             string status = CommonFunction.getSingleOriginalImage(url);
             txtStatus.Text = status;
         }
+
+        private void btn_Download_L_Click(object sender, EventArgs e)
+        {
+            string url = txtURL1.Text;
+            string status = CommonFunction.getSingleLargeImage(url);
+            txtStatus.Text = status;
+        }
     }
 }
