@@ -2,12 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FlickrDownLoadImage.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ImageFolder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">F:\PRIVATE\MMO\images\Flickr\</Value>
-    </Setting>
-    <Setting Name="flickrImageConnection" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Server=localhost;Database=flickrimage;Uid=root;Pwd=1234;</Value>
-    </Setting>
     <Setting Name="OriginalFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)">F:\PRIVATE\MMO\images\OriginalFlickr\</Value>
     </Setting>
@@ -16,6 +10,15 @@
     </Setting>
     <Setting Name="shutterstockLargeFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)">F:\PRIVATE\MMO\images\ShutterStockLarge\</Value>
+    </Setting>
+    <Setting Name="ImageFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F:\PRIVATE\MMO\images\Flickr\</Value>
+    </Setting>
+    <Setting Name="flickrImageConnection" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=localhost;Database=flickrimage;Uid=root;Pwd=1234;</Value>
+    </Setting>
+    <Setting Name="LargeFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F:\PRIVATE\MMO\images\LargeImage\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -25,30 +25,6 @@ namespace FlickrDownLoadImage.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("F:\\PRIVATE\\MMO\\images\\Flickr\\")]
-        public string ImageFolder {
-            get {
-                return ((string)(this["ImageFolder"]));
-            }
-            set {
-                this["ImageFolder"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Database=flickrimage;Uid=root;Pwd=1234;")]
-        public string flickrImageConnection {
-            get {
-                return ((string)(this["flickrImageConnection"]));
-            }
-            set {
-                this["flickrImageConnection"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("F:\\PRIVATE\\MMO\\images\\OriginalFlickr\\")]
         public string OriginalFolder {
             get {
@@ -80,6 +56,42 @@ namespace FlickrDownLoadImage.Properties {
             }
             set {
                 this["shutterstockLargeFolder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("F:\\PRIVATE\\MMO\\images\\Flickr\\")]
+        public string ImageFolder {
+            get {
+                return ((string)(this["ImageFolder"]));
+            }
+            set {
+                this["ImageFolder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Database=flickrimage;Uid=root;Pwd=1234;")]
+        public string flickrImageConnection {
+            get {
+                return ((string)(this["flickrImageConnection"]));
+            }
+            set {
+                this["flickrImageConnection"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("F:\\PRIVATE\\MMO\\images\\LargeImage\\")]
+        public string LargeFolder {
+            get {
+                return ((string)(this["LargeFolder"]));
+            }
+            set {
+                this["LargeFolder"] = value;
             }
         }
     }
