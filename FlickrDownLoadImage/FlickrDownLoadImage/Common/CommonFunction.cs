@@ -49,8 +49,7 @@ namespace FlickrDownLoadImage.Common
         {
             string sReturn = "false";
             string PageSource = RequestMethod(url);
-            string shutterstockOrgFolder = Properties.Settings.Default.shutterstockFolder;
-            string shutterstockLargeFolder = Properties.Settings.Default.shutterstockLargeFolder;
+            string LargeFolder = Properties.Settings.Default.LargeFolder;
                 string LargeImgURL = getOriginalImaage(PageSource, "", 3);
                 if (!LargeImgURL.Equals(""))
                 {
@@ -65,7 +64,7 @@ namespace FlickrDownLoadImage.Common
                     //_ImageDTO.
                     arrImageList.Add(_ImageDTO);
                     long nIndex = DatabaseController.saveLargeImageInfo(arrImageList);
-                    sReturn = DownloadImage(LargeImgURL, shutterstockLargeFolder, nIndex + ".jpg");
+                    sReturn = DownloadImage(LargeImgURL, LargeFolder, nIndex + ".jpg");
                     if (sReturn == "0")
                     {
                         sReturn = "Success";

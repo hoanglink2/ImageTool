@@ -98,5 +98,10 @@ namespace FlickrDownLoadImage
             string status = CommonFunction.getSingleLargeImage(url);
             txtStatus.Text = status;
         }
+
+        private void btn3_WriteTag_Click(object sender, EventArgs e)
+        {
+            ImageFunction.writeDataImages(txt3_folderName.Text, txt3_database.Text, txt3_IndexFrom.Text, txt3_IndexTo.Text);
+        }
     }
 }

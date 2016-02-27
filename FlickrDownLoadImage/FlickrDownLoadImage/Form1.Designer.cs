@@ -38,33 +38,35 @@
             this.dtP_TimeFrom = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_Download_L = new System.Windows.Forms.Button();
+            this.chx_DlOrg = new System.Windows.Forms.CheckBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnDownload_Single = new System.Windows.Forms.Button();
             this.txtURL1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnAsync = new System.Windows.Forms.Button();
-            this.txtShutterStock_tag = new System.Windows.Forms.TextBox();
-            this.txtShutterStockID = new System.Windows.Forms.TextBox();
-            this.txtImageID = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt3_database = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.chx_DlOrg = new System.Windows.Forms.CheckBox();
-            this.btn_Download_L = new System.Windows.Forms.Button();
+            this.txt3_folderName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt3_IndexFrom = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt3_IndexTo = new System.Windows.Forms.TextBox();
+            this.btn3_WriteTag = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(-2, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -79,7 +81,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(804, 252);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Download by Date";
+            this.tabPage1.Text = "1. Download by Date";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -163,8 +165,28 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(804, 252);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Download Single";
+            this.tabPage2.Text = "2. Download Single";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btn_Download_L
+            // 
+            this.btn_Download_L.Location = new System.Drawing.Point(683, 58);
+            this.btn_Download_L.Name = "btn_Download_L";
+            this.btn_Download_L.Size = new System.Drawing.Size(75, 23);
+            this.btn_Download_L.TabIndex = 6;
+            this.btn_Download_L.Text = "Download L";
+            this.btn_Download_L.UseVisualStyleBackColor = true;
+            this.btn_Download_L.Click += new System.EventHandler(this.btn_Download_L_Click);
+            // 
+            // chx_DlOrg
+            // 
+            this.chx_DlOrg.AutoSize = true;
+            this.chx_DlOrg.Location = new System.Drawing.Point(231, 62);
+            this.chx_DlOrg.Name = "chx_DlOrg";
+            this.chx_DlOrg.Size = new System.Drawing.Size(122, 17);
+            this.chx_DlOrg.TabIndex = 5;
+            this.chx_DlOrg.Text = "DownLoad Original?";
+            this.chx_DlOrg.UseVisualStyleBackColor = true;
             // 
             // txtStatus
             // 
@@ -208,99 +230,98 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "URL";
             // 
-            // tabPage3
+            // tabPage5
             // 
-            this.tabPage3.Controls.Add(this.btnAsync);
-            this.tabPage3.Controls.Add(this.txtShutterStock_tag);
-            this.tabPage3.Controls.Add(this.txtShutterStockID);
-            this.tabPage3.Controls.Add(this.txtImageID);
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(804, 252);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "async shutterstock";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage5.Controls.Add(this.btn3_WriteTag);
+            this.tabPage5.Controls.Add(this.txt3_IndexTo);
+            this.tabPage5.Controls.Add(this.label6);
+            this.tabPage5.Controls.Add(this.txt3_IndexFrom);
+            this.tabPage5.Controls.Add(this.label5);
+            this.tabPage5.Controls.Add(this.txt3_folderName);
+            this.tabPage5.Controls.Add(this.label4);
+            this.tabPage5.Controls.Add(this.txt3_database);
+            this.tabPage5.Controls.Add(this.label10);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(804, 252);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "3. Write tag";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // btnAsync
+            // label10
             // 
-            this.btnAsync.Location = new System.Drawing.Point(139, 147);
-            this.btnAsync.Name = "btnAsync";
-            this.btnAsync.Size = new System.Drawing.Size(75, 23);
-            this.btnAsync.TabIndex = 6;
-            this.btnAsync.Text = "Sync";
-            this.btnAsync.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Database ";
             // 
-            // txtShutterStock_tag
+            // txt3_database
             // 
-            this.txtShutterStock_tag.Location = new System.Drawing.Point(139, 98);
-            this.txtShutterStock_tag.Name = "txtShutterStock_tag";
-            this.txtShutterStock_tag.Size = new System.Drawing.Size(547, 20);
-            this.txtShutterStock_tag.TabIndex = 5;
-            // 
-            // txtShutterStockID
-            // 
-            this.txtShutterStockID.Location = new System.Drawing.Point(139, 57);
-            this.txtShutterStockID.Name = "txtShutterStockID";
-            this.txtShutterStockID.Size = new System.Drawing.Size(170, 20);
-            this.txtShutterStockID.TabIndex = 4;
-            // 
-            // txtImageID
-            // 
-            this.txtImageID.Location = new System.Drawing.Point(139, 21);
-            this.txtImageID.Name = "txtImageID";
-            this.txtImageID.Size = new System.Drawing.Size(100, 20);
-            this.txtImageID.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 101);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Tag";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "ShutterStockID";
+            this.txt3_database.Location = new System.Drawing.Point(100, 26);
+            this.txt3_database.Name = "txt3_database";
+            this.txt3_database.Size = new System.Drawing.Size(347, 20);
+            this.txt3_database.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 24);
+            this.label4.Location = new System.Drawing.Point(26, 66);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "ImageID";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "folderName";
             // 
-            // chx_DlOrg
+            // txt3_folderName
             // 
-            this.chx_DlOrg.AutoSize = true;
-            this.chx_DlOrg.Location = new System.Drawing.Point(231, 62);
-            this.chx_DlOrg.Name = "chx_DlOrg";
-            this.chx_DlOrg.Size = new System.Drawing.Size(122, 17);
-            this.chx_DlOrg.TabIndex = 5;
-            this.chx_DlOrg.Text = "DownLoad Original?";
-            this.chx_DlOrg.UseVisualStyleBackColor = true;
+            this.txt3_folderName.Location = new System.Drawing.Point(100, 66);
+            this.txt3_folderName.Name = "txt3_folderName";
+            this.txt3_folderName.Size = new System.Drawing.Size(347, 20);
+            this.txt3_folderName.TabIndex = 3;
             // 
-            // btn_Download_L
+            // label5
             // 
-            this.btn_Download_L.Location = new System.Drawing.Point(683, 58);
-            this.btn_Download_L.Name = "btn_Download_L";
-            this.btn_Download_L.Size = new System.Drawing.Size(75, 23);
-            this.btn_Download_L.TabIndex = 6;
-            this.btn_Download_L.Text = "Download L";
-            this.btn_Download_L.UseVisualStyleBackColor = true;
-            this.btn_Download_L.Click += new System.EventHandler(this.btn_Download_L_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 108);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Index From";
+            // 
+            // txt3_IndexFrom
+            // 
+            this.txt3_IndexFrom.Location = new System.Drawing.Point(100, 108);
+            this.txt3_IndexFrom.Name = "txt3_IndexFrom";
+            this.txt3_IndexFrom.Size = new System.Drawing.Size(100, 20);
+            this.txt3_IndexFrom.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(29, 153);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Index To";
+            // 
+            // txt3_IndexTo
+            // 
+            this.txt3_IndexTo.Location = new System.Drawing.Point(100, 153);
+            this.txt3_IndexTo.Name = "txt3_IndexTo";
+            this.txt3_IndexTo.Size = new System.Drawing.Size(100, 20);
+            this.txt3_IndexTo.TabIndex = 7;
+            // 
+            // btn3_WriteTag
+            // 
+            this.btn3_WriteTag.Location = new System.Drawing.Point(372, 182);
+            this.btn3_WriteTag.Name = "btn3_WriteTag";
+            this.btn3_WriteTag.Size = new System.Drawing.Size(75, 23);
+            this.btn3_WriteTag.TabIndex = 8;
+            this.btn3_WriteTag.Text = "Start Write";
+            this.btn3_WriteTag.UseVisualStyleBackColor = true;
+            this.btn3_WriteTag.Click += new System.EventHandler(this.btn3_WriteTag_Click);
             // 
             // Form1
             // 
@@ -316,8 +337,8 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -337,18 +358,20 @@
         private System.Windows.Forms.Button btnDownload_Single;
         private System.Windows.Forms.TextBox txtURL1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox txtShutterStock_tag;
-        private System.Windows.Forms.TextBox txtShutterStockID;
-        private System.Windows.Forms.TextBox txtImageID;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnAsync;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.CheckBox chx_DlOrg;
         private System.Windows.Forms.Button btn_Download_L;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TextBox txt3_database;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt3_folderName;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt3_IndexTo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt3_IndexFrom;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn3_WriteTag;
     }
 }
 
