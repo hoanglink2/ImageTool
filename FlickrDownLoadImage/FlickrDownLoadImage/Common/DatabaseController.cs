@@ -7,6 +7,9 @@ using MySql.Data.MySqlClient;
 using System.Collections;
 using FlickrDownLoadImage.Common;
 using FlickrDownLoadImage.Model;
+using System.Data.SqlClient;
+using System.Data;
+
 
 namespace FlickrDownLoadImage.Common
 {
@@ -155,6 +158,27 @@ namespace FlickrDownLoadImage.Common
                 nIndex = 0;
             }
             return nIndex;
+        }
+
+
+
+        public static DataSet GetDataSet(string SQL)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(FlickrImageConnection);
+                MySqlDataAdapter da = new MySqlDataAdapter(SQL, conn);
+                da.SelectCommand.CommandType = CommandType.Text;
+                DataSet ds = new DataSet();
+                conn.Open();
+                da.Fill(ds);
+                conn.Close();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

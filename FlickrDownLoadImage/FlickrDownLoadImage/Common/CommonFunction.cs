@@ -23,7 +23,8 @@ namespace FlickrDownLoadImage.Common
         /// </summary>
         /// <param name="URL"></param>
         /// <returns></returns>
-        public static string RequestMethod(string URL){
+        public static string RequestMethod(string URL)
+        {
             string sDataReturn;
             try
             {
@@ -45,36 +46,45 @@ namespace FlickrDownLoadImage.Common
         /// </summary>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static string getSingleLargeImage(string url)
+        public static string getSingleLargeImage(string url, string savePath, string saveFolder)
         {
             string sReturn = "false";
             string PageSource = RequestMethod(url);
-            string LargeFolder = Properties.Settings.Default.LargeFolder;
-                string LargeImgURL = getOriginalImaage(PageSource, "", 3);
-                if (!LargeImgURL.Equals(""))
+            string LargeFolder = savePath + "\\" + saveFolder;
+            if (saveFolder == null || saveFolder == "" || savePath == null || savePath == "")
+            {
+                LargeFolder = Properties.Settings.Default.LargeFolder;
+            }
+
+            string LargeImgURL = getOriginalImaage(PageSource, "", 3);
+            if (!LargeImgURL.Equals(""))
+            {
+                List<ImageDTO> arrImageList = new List<ImageDTO>();
+                ImageDTO _ImageDTO = new ImageDTO();
+                _ImageDTO.sArtistName = "hoang dinh thanh";
+                _ImageDTO.sArtistUserName = "hoang dinh thanh";
+                _ImageDTO.sDescription = "";
+                _ImageDTO.sTitle = "";
+                _ImageDTO.sUrl = url;
+                _ImageDTO.sFolderName = "LargeImage";
+                if (saveFolder != null && saveFolder != "")
                 {
-                    List<ImageDTO> arrImageList = new List<ImageDTO>();
-                    ImageDTO _ImageDTO = new ImageDTO();
-                    _ImageDTO.sArtistName = "hoang dinh thanh";
-                    _ImageDTO.sArtistUserName = "hoang dinh thanh";
-                    _ImageDTO.sDescription = "";
-                    _ImageDTO.sTitle = "";
-                    _ImageDTO.sUrl = url;
-                    _ImageDTO.sFolderName = "LargeImage";
-                    //_ImageDTO.
-                    arrImageList.Add(_ImageDTO);
-                    long nIndex = DatabaseController.saveLargeImageInfo(arrImageList);
-                    sReturn = DownloadImage(LargeImgURL, LargeFolder, nIndex + ".jpg");
-                    if (sReturn == "0")
-                    {
-                        sReturn = "Success";
-                    }
-                    else
-                    {
-                        sReturn = "fail";
-                    }
+                    _ImageDTO.sFolderName = saveFolder;
                 }
-                return sReturn;
+                //_ImageDTO.
+                arrImageList.Add(_ImageDTO);
+                long nIndex = DatabaseController.saveLargeImageInfo(arrImageList);
+                sReturn = DownloadImage(LargeImgURL, LargeFolder, nIndex + ".jpg");
+                if (sReturn == "0")
+                {
+                    sReturn = "Success";
+                }
+                else
+                {
+                    sReturn = "fail";
+                }
+            }
+            return sReturn;
         }
         /// <summary>
         /// 
@@ -146,7 +156,8 @@ namespace FlickrDownLoadImage.Common
             List<ImageDTO> arrOrgImageList = new List<ImageDTO>();
             ImageDTO objImageDTO;
             ImageDTO objOrgImageDTO;
-            try {
+            try
+            {
                 dynamic jsonResponse = JObject.Parse(json);
                 string ImageFolder = Properties.Settings.Default.ImageFolder;
                 string OriginalFoder = Properties.Settings.Default.OriginalFolder;
@@ -231,7 +242,7 @@ namespace FlickrDownLoadImage.Common
         /// get URL of Original Image
         /// </summary>
         /// <returns></returns>
-        public static string getOriginalImaage(string sPageSource,string urlP, int nType)
+        public static string getOriginalImaage(string sPageSource, string urlP, int nType)
         {
             string sOriginalURL = "";
             string pattern = "_o.jpg";
@@ -249,7 +260,7 @@ namespace FlickrDownLoadImage.Common
                         originalCode = sPageSource.Substring(sPageSource.IndexOf(pattern) - 10, 10);
                         sOriginalURL = urlP + "_" + originalCode + pattern;
                     }
-                    else if(nType == 2)
+                    else if (nType == 2)
                     {
                         sOriginalURL = sPageSource.Substring(sPageSource.IndexOf(pattern) - 52, 58);
                     }

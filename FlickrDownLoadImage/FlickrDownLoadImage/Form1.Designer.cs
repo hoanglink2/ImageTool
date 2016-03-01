@@ -46,15 +46,19 @@
             this.txtURL1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt3_database = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt3_folderName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt3_IndexFrom = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt3_IndexTo = new System.Windows.Forms.TextBox();
             this.btn3_WriteTag = new System.Windows.Forms.Button();
+            this.txt3_IndexTo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt3_IndexFrom = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt3_folderName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt3_database = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt2_SaveURL = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt2_SaveFolder = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -153,6 +157,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txt2_SaveFolder);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.txt2_SaveURL);
+            this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.btn_Download_L);
             this.tabPage2.Controls.Add(this.chx_DlOrg);
             this.tabPage2.Controls.Add(this.txtStatus);
@@ -249,53 +257,22 @@
             this.tabPage5.Text = "3. Write tag";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // btn3_WriteTag
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 26);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Database ";
+            this.btn3_WriteTag.Location = new System.Drawing.Point(372, 182);
+            this.btn3_WriteTag.Name = "btn3_WriteTag";
+            this.btn3_WriteTag.Size = new System.Drawing.Size(75, 23);
+            this.btn3_WriteTag.TabIndex = 8;
+            this.btn3_WriteTag.Text = "Start Write";
+            this.btn3_WriteTag.UseVisualStyleBackColor = true;
+            this.btn3_WriteTag.Click += new System.EventHandler(this.btn3_WriteTag_Click);
             // 
-            // txt3_database
+            // txt3_IndexTo
             // 
-            this.txt3_database.Location = new System.Drawing.Point(100, 26);
-            this.txt3_database.Name = "txt3_database";
-            this.txt3_database.Size = new System.Drawing.Size(347, 20);
-            this.txt3_database.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "folderName";
-            // 
-            // txt3_folderName
-            // 
-            this.txt3_folderName.Location = new System.Drawing.Point(100, 66);
-            this.txt3_folderName.Name = "txt3_folderName";
-            this.txt3_folderName.Size = new System.Drawing.Size(347, 20);
-            this.txt3_folderName.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 108);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Index From";
-            // 
-            // txt3_IndexFrom
-            // 
-            this.txt3_IndexFrom.Location = new System.Drawing.Point(100, 108);
-            this.txt3_IndexFrom.Name = "txt3_IndexFrom";
-            this.txt3_IndexFrom.Size = new System.Drawing.Size(100, 20);
-            this.txt3_IndexFrom.TabIndex = 5;
+            this.txt3_IndexTo.Location = new System.Drawing.Point(100, 153);
+            this.txt3_IndexTo.Name = "txt3_IndexTo";
+            this.txt3_IndexTo.Size = new System.Drawing.Size(100, 20);
+            this.txt3_IndexTo.TabIndex = 7;
             // 
             // label6
             // 
@@ -306,22 +283,85 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Index To";
             // 
-            // txt3_IndexTo
+            // txt3_IndexFrom
             // 
-            this.txt3_IndexTo.Location = new System.Drawing.Point(100, 153);
-            this.txt3_IndexTo.Name = "txt3_IndexTo";
-            this.txt3_IndexTo.Size = new System.Drawing.Size(100, 20);
-            this.txt3_IndexTo.TabIndex = 7;
+            this.txt3_IndexFrom.Location = new System.Drawing.Point(100, 108);
+            this.txt3_IndexFrom.Name = "txt3_IndexFrom";
+            this.txt3_IndexFrom.Size = new System.Drawing.Size(100, 20);
+            this.txt3_IndexFrom.TabIndex = 5;
             // 
-            // btn3_WriteTag
+            // label5
             // 
-            this.btn3_WriteTag.Location = new System.Drawing.Point(372, 182);
-            this.btn3_WriteTag.Name = "btn3_WriteTag";
-            this.btn3_WriteTag.Size = new System.Drawing.Size(75, 23);
-            this.btn3_WriteTag.TabIndex = 8;
-            this.btn3_WriteTag.Text = "Start Write";
-            this.btn3_WriteTag.UseVisualStyleBackColor = true;
-            this.btn3_WriteTag.Click += new System.EventHandler(this.btn3_WriteTag_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 108);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Index From";
+            // 
+            // txt3_folderName
+            // 
+            this.txt3_folderName.Location = new System.Drawing.Point(100, 66);
+            this.txt3_folderName.Name = "txt3_folderName";
+            this.txt3_folderName.Size = new System.Drawing.Size(347, 20);
+            this.txt3_folderName.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "folderName";
+            // 
+            // txt3_database
+            // 
+            this.txt3_database.Location = new System.Drawing.Point(100, 26);
+            this.txt3_database.Name = "txt3_database";
+            this.txt3_database.Size = new System.Drawing.Size(347, 20);
+            this.txt3_database.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Database ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(29, 117);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "save";
+            // 
+            // txt2_SaveURL
+            // 
+            this.txt2_SaveURL.Location = new System.Drawing.Point(88, 117);
+            this.txt2_SaveURL.Name = "txt2_SaveURL";
+            this.txt2_SaveURL.Size = new System.Drawing.Size(573, 20);
+            this.txt2_SaveURL.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(88, 158);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 13);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "save Folder";
+            // 
+            // txt2_SaveFolder
+            // 
+            this.txt2_SaveFolder.Location = new System.Drawing.Point(168, 155);
+            this.txt2_SaveFolder.Name = "txt2_SaveFolder";
+            this.txt2_SaveFolder.Size = new System.Drawing.Size(168, 20);
+            this.txt2_SaveFolder.TabIndex = 10;
             // 
             // Form1
             // 
@@ -372,6 +412,10 @@
         private System.Windows.Forms.TextBox txt3_IndexFrom;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn3_WriteTag;
+        private System.Windows.Forms.TextBox txt2_SaveURL;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt2_SaveFolder;
+        private System.Windows.Forms.Label label9;
     }
 }
 
